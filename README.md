@@ -1,3 +1,23 @@
+# Features
+- Login/Sign Up
+  - Sign In /Sign Up Form
+  - redirect to Browse Page
+- Browse (after Authentication)
+  - Header
+  - Main Movie
+      - Tailer in Background
+      - Title and Description
+      - Movie Suggestions
+        - Movie Lists * N
+- NetflixGPT
+    - Search Bar
+    - Movie Suggestions  
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
