@@ -7,7 +7,7 @@ const Login = () => {
 
     const toggleSignInForm = () => {
         setIsSignInForm(!isSignInForm);
-    }
+    };
 
     return (
         <div>
@@ -18,7 +18,7 @@ const Login = () => {
                     alt='logo'
                 />
             </div>
-            <form className='w-3/12  absolute p-12 bg-black mt-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-85'>
+            <form className='w-3/12  absolute p-12 bg-black mt-24 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-85'>
                 <h1 className='font-bold text-3xl py-4'>
                     {isSignInForm ? "Sign In" : "Sign Up"}
                 </h1>
