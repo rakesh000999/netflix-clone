@@ -7,16 +7,15 @@ import {
     updateProfile
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import { USER_AVATAR } from '../utils/constants';
 
 const Login = () => {
 
     const [isSignInForm, setIsSignInForm] = useState(true);
     const [errorMessage, setErrorMessage] = useState(null);
 
-    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const email = useRef(null);
@@ -50,7 +49,9 @@ const Login = () => {
                     // Signed up 
                     const user = userCredential.user;
                     updateProfile(user, {
-                        displayName: email.current.value, photoURL: "https://avatars.githubusercontent.com/u/154825017?v=4"
+                        displayName: email.current.value,
+                        photoURL:  USER_AVATAR 
+
                     }).then(() => {
                         // Profile updated!
                         const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -62,12 +63,12 @@ const Login = () => {
                                 photoURL: photoURL
                             })
                         );
-                        navigate("/browse");
+
                     }).catch((error) => {
                         // An error occurred
                         setErrorMessage(error.message);
                     });
-                    console.log(user);
+                    // console.log(user);
                 })
                 .catch((error) => {
                     const errorCode = error.code;
@@ -84,8 +85,7 @@ const Login = () => {
             ).then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                console.log(user);
-                navigate("/browse");
+                // console.log(user);
             }).catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
@@ -105,7 +105,8 @@ const Login = () => {
             </div>
             <form
                 onSubmit={(e) => e.preventDefault()}
-                className='w-[30%] absolute p-12 px-20 bg-black mt-24 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-85'>
+                className='w-[30%] absolute p-12 px-20 bg-black mt-24 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-85'
+            >
                 <h1 className='font-bold text-3xl py-4'>
                     {isSignInForm
                         ? "Sign In"
