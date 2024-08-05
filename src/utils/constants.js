@@ -13,3 +13,13 @@ export const API_OPTIONS = {
 };
 
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500";
+
+export const BG_URL =
+    "https://assets.nflxext.com/ffe/siteui/vlv3/826348c2-cdcb-42a0-bc11-a788478ba5a2/13803d44-805f-4a74-9ad9-4fd16d76feb8/NP-en-20240729-POP_SIGNUP_TWO_WEEKS-perspective_WEB_9d54290e-dd19-45c2-8002-7a12a9dea821_medium.jpg";
+
+export const SUPPORTED_LANGUAGES = [
+    { identifier: "en", name: "English" },
+    { identifier: "np", name: "Nepali" },
+    { identifier: "hi", name: "Hindi" },
+    { identifier: "jp", name: "Japanese" },
+]

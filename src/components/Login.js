@@ -9,7 +9,7 @@ import {
 import { auth } from "../utils/firebase";
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
-import { USER_AVATAR } from '../utils/constants';
+import { BG_URL, USER_AVATAR } from '../utils/constants';
 
 const Login = () => {
 
@@ -99,8 +99,8 @@ const Login = () => {
             <Header />
             <div className='absolute'>
                 <img
-                    src='https://assets.nflxext.com/ffe/siteui/vlv3/826348c2-cdcb-42a0-bc11-a788478ba5a2/13803d44-805f-4a74-9ad9-4fd16d76feb8/NP-en-20240729-POP_SIGNUP_TWO_WEEKS-perspective_WEB_9d54290e-dd19-45c2-8002-7a12a9dea821_medium.jpg'
-                    alt='logo'
+                    src={BG_URL}
+                    alt='background_image'
                 />
             </div>
             <form
